@@ -29,7 +29,7 @@ public class MemberController {
     @GetMapping("/{id}")
     public ResponseEntity<MemberResponse> getMemberById(@PathVariable Long id) {
         MemberModel member = memberQueryService.getMember(id);
-        return ResponseEntity.ok().body(MemberResponse.from(id, member));
+        return ResponseEntity.ok().body(MemberResponse.of(id, member));
     }
 
     @GetMapping
@@ -41,7 +41,7 @@ public class MemberController {
     @PostMapping
     public ResponseEntity<MemberResponse> addMember(@Valid @RequestBody MemberRequest memberRequest) {
         Member member = memberService.addMember(memberRequest);
-        return ResponseEntity.ok().body(MemberResponse.of(member));
+        return ResponseEntity.ok().body(MemberResponse.from(member));
     }
 
     @Getter

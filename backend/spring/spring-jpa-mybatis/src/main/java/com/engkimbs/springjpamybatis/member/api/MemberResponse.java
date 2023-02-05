@@ -21,7 +21,7 @@ public class MemberResponse {
         this.price = price;
     }
 
-    public static MemberResponse of(Member member) {
+    public static MemberResponse from(Member member) {
         return MemberResponse.builder()
                 .id(member.getId())
                 .name(member.getName())
@@ -29,7 +29,7 @@ public class MemberResponse {
                 .build();
     }
 
-    public static MemberResponse from(Long id, MemberModel memberModel) {
+    public static MemberResponse of(Long id, MemberModel memberModel) {
         return MemberResponse.builder()
                 .id(id)
                 .name(memberModel.getName())
@@ -37,7 +37,7 @@ public class MemberResponse {
                 .build();
     }
 
-    public static MemberResponse of(MemberModel memberModel) {
+    public static MemberResponse from(MemberModel memberModel) {
         return MemberResponse.builder()
                 .name(memberModel.getName())
                 .price(memberModel.getPoint())
