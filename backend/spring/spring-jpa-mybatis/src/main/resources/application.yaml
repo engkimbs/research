@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:tcp://localhost:9092/mem:test:9092/default
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    defer-datasource-initialization: true
+  web:
+    resources:
+      add-mappings: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.engkimbs.springjpamybatis.member.query.model
+  mapper-locations: mybatis-mapper/*.xml
+logging:
+  level:
+    org.hibernate.SQL: debug
