@@ -33,4 +33,5 @@ mybatis:
   mapper-locations: mybatis-mapper/*.xml
 logging:
   level:
-    org.hibernate.SQL: debug
+    root: debug
+#    org.hibernate.SQL: debug
